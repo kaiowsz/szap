@@ -7,6 +7,7 @@ import { auth } from "../firebase"
 export default function Login() {
 
     const [err, setErr] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("")
     const navigate = useNavigate()
     
     async function handleSubmit(e) {
@@ -20,6 +21,7 @@ export default function Login() {
             navigate("/")
         } catch(err) {
             setErr(true)
+            setErrorMessage(err.message.replace("Firebase: ", ""))
         }
     }
 
@@ -33,7 +35,7 @@ export default function Login() {
                 <input type="email" placeholder="Email" required/>
                 <input type="password" placeholder="Password" required/>
                 <button>Sign In</button>
-                {err && <span>Something went wrong</span>}
+                {err && <span>{errorMessage}</span>}
             </form>
 
             

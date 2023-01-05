@@ -3,16 +3,20 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
+import { ModalContext } from "../context/ModalContext";
 
 export default function Message({message}) {
 
     const {currentUser} = useContext(AuthContext)
     const {data} = useContext(ChatContext)
+    const {setOpenModal, setUrlImage} = useContext(ModalContext)
+
 
     const ref = useRef()
 
     function handleClickImage(e) {
-        console.log(e.target.src)
+        setOpenModal(true)
+        setUrlImage(e.target.src)
     }
 
     useEffect(() => {

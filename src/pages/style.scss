@@ -20,6 +20,12 @@
     }
 }
 
+@mixin desktop {
+    @media screen and (max-width: 1300px) {
+        @content;
+    }
+}
+
 $txt-color: #5d5b8d;
 $bg-container: #a7bcff;
 
@@ -122,6 +128,46 @@ $bg-container: #a7bcff;
         @include tablet {
             width: 90%;
         }
+
+        .modalImage {
+            background-color: rgba(0,0,0, 0.7);
+            position: absolute;
+            inset: 0;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .containerModal {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 70%;
+                max-height: 90%;
+            }
+
+            button{
+                align-self: flex-end;
+                color: rgb(209, 6, 6);
+                font-size: 2rem;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+            }
+
+            button:hover {
+                color: rgb(100, 2, 2);
+            }
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .open {
+            display: flex;
+        }
         
 
         .sidebar {
@@ -141,10 +187,7 @@ $bg-container: #a7bcff;
 
                 .logo {
                     font-weight: bold;
-                    @include mobile {
-                        display: none; 
-                    }
-                    @include tablet {
+                    @include desktop {
                         display: none; 
                     }
                 }
@@ -305,6 +348,7 @@ $bg-container: #a7bcff;
 
                         img {
                             width: 80%;
+                            cursor: pointer;
                         }
                     }
 
