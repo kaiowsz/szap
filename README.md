@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Kaiowsz Chat App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Chatting inside the app](https://github.com/kaiowsz/chat-realtime/blob/main/src/img/chat.png)
 
-## Available Scripts
+## :computer: Technologies
 
-In the project directory, you can run:
+<li>HTML</li>
+<li>SCSS</li>
+<li>JavaScript</li>
+<li>React</li>
+<li>Firebase</li>
 
-### `npm start`
+## :hammer_and_wrench: Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p>Project created to practice my knowledge in my current technologies.</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p>Available in https://chat-realtime-liard.vercel.app/login</p>
 
-### `npm test`
+## :coffee: Functions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<li>Account registration.</li>
+<li>Send and receive messages in real time.</li>
+<li>Send images in real time.</li>
 
-### `npm run build`
+## :vulcan_salute: Getting started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Cloning the repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+$ git clone https://github.com/kaiowsz/chat-realtime.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+$ cd chat-realtime
+```
+#
 
-### `npm run eject`
+#### Installing dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+$ yarn
+```
+or
+```bash
+$ npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Running
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+$ npm dev
+```
+or
+```bash
+$ yarn dev
+```
 
-## Learn More
+#### Enjoy it. :clinking_glasses:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+made by kaiowsz
