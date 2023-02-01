@@ -1,3 +1,4 @@
+
 import React from "react"
 import "./style.scss"
 import AddImage from "../img/addAvatar.png"
@@ -19,6 +20,10 @@ export default function Register() {
         const email = e.target[1].value
         const password = e.target[2].value
         const formFile = e.target[3].files[0]
+
+        if(formFile === undefined) {
+            return alert("Avatar is required.")
+        }
 
         try {
             const res = await createUserWithEmailAndPassword(auth, email, password)
@@ -65,7 +70,7 @@ export default function Register() {
                 <input type="text" placeholder="Name" required/>
                 <input type="email" placeholder="Email" required/>
                 <input type="password" placeholder="Password (min 6 characters)" required/>
-                <input style={{display: "none"}} type="file" id="file"/>
+                <input style={{display: "none"}} type="file" id="file" />
                 <label htmlFor="file">
                     <img src={AddImage} alt="" />
                     <span>Add an avatar</span>

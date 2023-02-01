@@ -28,6 +28,7 @@ export default function Login() {
 
     return (
     <div className="formContainer">
+        
         <div className="formWrapper">
             <span className="logo">kaiowsz ChatApp</span>
             <span className="title">Login Page</span>

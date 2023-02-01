@@ -32,14 +32,21 @@ $bg-container: #a7bcff;
 
 .formContainer {
     background-color: var(--bg-container);
+    background-image: url("../img/bggif.gif");
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .formWrapper {
-        background-color: white;
-        padding: 20px 60px;
+
+        @include mobile {
+            padding: 40px 45px;
+        }
+
+        box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.692);
+        background-color: rgb(243, 243, 243);
+        padding: 40px 80px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -67,6 +74,12 @@ $bg-container: #a7bcff;
                 padding: 15px;
                 border: none;
                 width: 250px;
+                background-color: rgb(243, 243, 243);
+
+                @include mobile {
+                    width: 200px;
+                }
+
                 border-bottom: 1px solid #a7bcff;
                 &::placeholder {
                     color: rgb(175, 175, 175);
@@ -225,6 +238,24 @@ $bg-container: #a7bcff;
 
                 .searchForm {
                     padding: 10px;
+                    display: flex;
+
+                    @include laptop {
+                        display: inherit;
+                    }
+
+                    button {
+                        border: none;
+                        background-color: #5d5b8d;
+                        color: white;
+                        cursor: pointer;
+                        transition: all .5s;
+                        border-radius: 6px;
+                    }
+                    button:hover {
+                        
+                        background-color: #353455;
+                    }
 
 
 

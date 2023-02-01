@@ -1,9 +1,6 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { doc, onSnapshot } from "firebase/firestore"
 import { db } from "../firebase";
-import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 
@@ -20,6 +17,9 @@ export default function Chats() {
 
             const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
                 setChats(doc.data())
+                if(doc.data() === undefined || null) {
+                    setChats([])
+                }
             })
             
             return () => { unsub() };

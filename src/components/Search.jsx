@@ -11,6 +11,25 @@ export default function Search() {
 
     const {currentUser} = useContext(AuthContext)
 
+    async function handleSearch() {
+        const q = query(
+            collection(db, "users"),
+            where("displayName", "==", userName)
+        )
+
+        try {
+            const querySnapshot = await getDocs(q)
+            console.log(querySnapshot)
+            querySnapshot.forEach((doc) => {
+                setUser(doc.data())
+            })
+
+        } catch (error) {           
+            setErr(true)
+        }
+    }
+
+
     async function handleSelectChat() {
         const combinedID = currentUser.uid > user.uid ? currentUser.uid + user.uid : user.uid + currentUser.uid
 
@@ -21,50 +40,29 @@ export default function Search() {
             await setDoc(doc(db, "chats", combinedID), {messages: []})
 
             await updateDoc(doc(db, "userChats", currentUser.uid), {
-                [combinedID+".userInfo"]: {
+                [combinedID + ".userInfo"]: {
                     uid: user.uid,
                     displayName: user.displayName,
                     photoURL: user.photoURL
                 },
-                [combinedID+".date"]: serverTimestamp()
+                [combinedID + ".date"]: serverTimestamp()
             });
 
             await updateDoc(doc(db, "userChats", user.uid), {
-                [combinedID+".userInfo"]: {
+                [combinedID + ".userInfo"]: {
                     uid: currentUser.uid,
                     displayName: currentUser.displayName,
                     photoURL: currentUser.photoURL
                 },
-                [combinedID+".date"]: serverTimestamp()
-            })
-        }
-
-
+                [combinedID + ".date"]: serverTimestamp()
+            });
+            }
         } catch (error) {
             alert(error)
         }
 
         setUser(null)
         setUserName("")
-    }
-
-    async function handleSearch() {
-        const q = query(
-            collection(db, "users"),
-            where("displayName", "==", userName)
-        )
-
-        try {
-            const querySnapshot = await getDocs(q)
-            querySnapshot.forEach((doc) => {
-                setUser(doc.data())
-            })
-
-        } catch (error) {           
-            setErr(true)
-        }
-
-
     }
 
     function handleKeyDown(e) {
@@ -79,16 +77,17 @@ export default function Search() {
             onChange={e => setUserName(e.target.value)}
             onKeyDown={handleKeyDown}
             value={userName}/>
+            <button onClick={handleSearch}>SEARCH</button>
         </div>
 
         { err && <span>User not found.</span> }
 
-        {user && <div className="userChat" onClick={handleSelectChat}>
+        {user && (<div className="userChat" onClick={handleSelectChat}>
             <img src={user.photoURL} alt="" />
             <div className="userChatInfo">
                 <span>{user.displayName}</span>
             </div>
-        </div>}
+        </div> )}
     </div>
     )
 }
