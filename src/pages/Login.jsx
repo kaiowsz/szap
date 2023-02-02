@@ -30,7 +30,7 @@ export default function Login() {
     <div className="formContainer">
         
         <div className="formWrapper">
-            <span className="logo">kaiowsz ChatApp</span>
+            <span className="logo">SZap</span>
             <span className="title">Login Page</span>
             <form onSubmit={handleSubmit}>
                 <input type="email" placeholder="Email" required/>

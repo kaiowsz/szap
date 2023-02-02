@@ -70,6 +70,18 @@ $bg-container: #a7bcff;
             flex-direction: column;
             gap: 15px;
 
+            .text-file {
+                font-size: 15px;
+                overflow: hidden;
+                max-width: 250px;
+                color: purple;
+
+                @include mobile {
+                    max-width: 200px;
+                }
+
+            }
+
             input {
                 padding: 15px;
                 border: none;
@@ -239,6 +251,7 @@ $bg-container: #a7bcff;
                 .searchForm {
                     padding: 10px;
                     display: flex;
+                    justify-content: space-between;
 
                     @include laptop {
                         display: inherit;
