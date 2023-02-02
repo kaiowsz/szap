@@ -1,4 +1,4 @@
-# Kaiowsz Chat App
+# SZap
 
 ![Chatting inside the app](https://github.com/kaiowsz/chat-realtime/blob/main/src/img/chat.png)
 
